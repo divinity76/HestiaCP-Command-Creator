@@ -101,7 +101,7 @@ export default {
 
         if (item.textField && item.selected) {
           if(item.text.length >= 2){
-            installstr.push(item.param + " '" + item.text + "'")
+            installstr.push(item.param + " '" + item.text.toString().replace(/\'/g, "'\\''") + "'")
           }
         } else if(!item.textField) {
           if (item.param.includes("force")) {
